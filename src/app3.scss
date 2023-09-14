@@ -1,0 +1,65 @@
+$total-arrows: 3;
+$arrow-line-length: 50px;
+$arrow-line-width: 6px;
+
+// arrow animtion + choose direction
+@mixin arrow-transitions($rot: 0deg) {
+  transform: translate(-50%, -50%) rotateZ($rot);
+}
+
+// arrows
+.arrow-container {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  @include arrow-transitions(0deg);
+  animation-name: arrow-moves;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transition-timing-function: cubic-bezier(0.9, -0.02, 0, 0.97);
+}
+.arrow {
+  position: absolute;
+  left: 50%;
+  transition: all 0.4s ease;
+  &:before,
+  &:after {
+    transition: all 0.4s ease;
+    content: "";
+    display: block;
+    position: absolute;
+    transform-origin: bottom right;
+    background: #fff;
+    width: $arrow-line-width;
+    height: $arrow-line-length;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+  }
+  &:after {
+    transform-origin: bottom left;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+  }
+  @for $i from 1 through $total-arrows {
+    &:nth-child(#{$i}) {
+      top: 15 + (100% * $i/4);
+    }
+  }
+}
+
+@keyframes arrow-moves {
+  0% {
+    top: -250%;
+  }
+  50% {
+    top: -350%;
+  }
+  100% {
+    top: -250%;
+  }
+}
+
+.button-combo {
+  position: relative;
+}

@@ -1,0 +1,67 @@
+#bgvideo {
+    background: url('url') no-repeat;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transition: 1s opacity;
+    background-size: cover;
+    z-index: -100;
+}
+#bgtext {
+ color: white;
+ width: 33%;
+ background: rgba(0,0,0,0.3);
+ font-family: Arial Narrow, sans-serif;
+ font-weight: 100;
+ padding: 28px;
+ margin: 28px;
+ font-size: 19px;
+ float: right;
+ text-align: justify;
+}
+
+h1 {
+ margin-top: 0;
+ font-size: 42px;
+ text-transform: uppercase;
+ letter-spacing: 4px;
+}
+
+a {
+ background:rgba(0,0,0,0.5);
+ color: #FFFFFF;
+ text-decoration: none;
+ padding: 7px;
+ transition: .6s background;
+ display: inline-block;
+}
+
+a:hover {
+ background: rgba(0,0,0,0.9);
+}
+
+#bgtext button {
+ width: 80%;
+ background: rgba(255,255,255,0.23);
+ color: #FFFFFF;
+ margin: 14px auto;
+ font-size: 18px;
+ padding: 6px;
+ display: block;
+ border: none;
+ border-radius: 3px;
+ cursor: pointer;
+ transition: .3s background;
+}
+
+#bgtext button:hover {
+ background: rgba(0,0,0,0.5);
+}
